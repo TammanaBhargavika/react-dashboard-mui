@@ -10,17 +10,15 @@ import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import ListSubheader from '@mui/material/ListSubheader';
+import Login from './login';
 
 const bull = (
-    <Box component="span" sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}>
-        •
-    </Box>
+    <Box component="span" sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}> • </Box>
 );
 
 export const mainListItems = (
     <React.Fragment>
-        <ListSubheader component="div" inset>MAIN MENU</ListSubheader>
+    <ListItemText primary="MAIN MENU"/>
         <ListItemButton>
             <ListItemIcon>
                 <DashboardIcon />
@@ -50,29 +48,35 @@ export const mainListItems = (
 
 export const secondListItems = (
     <React.Fragment>
-        <ListSubheader component="div" inset>TEAMS</ListSubheader>
+    <ListItemText primary="TEAMS"/>
         <ListItemButton>
-            <Typography variant="h6" component="div">{bull} Marketing</Typography>
+            <Typography variant="h7" component="div">{bull} Marketing</Typography>
         </ListItemButton>
         <ListItemButton>
-            <Typography variant="h6" component="div">{bull} Development </Typography>
+            <Typography variant="h7" component="div">{bull} Development </Typography>
         </ListItemButton>
     </React.Fragment>
 )
 
-export const ThirdListItems = (
-    <React.Fragment>
-        <ListItemButton>
+export const ThirdListItems = ()=>{
+    return(
+        <div>
+        <ListItemButton >
             <ListItemIcon>
                 <SettingsIcon />
             </ListItemIcon>
             <ListItemText primary="Settings" />
         </ListItemButton>
-        <ListItemButton>
+        <ListItemButton onClick={(event) => {
+            console.log("top suggestion clicked")
+            window.location.reload(false);
+          }} >
             <ListItemIcon>
                 <LogoutRoundedIcon />
             </ListItemIcon>
             <ListItemText primary="Logout" />
         </ListItemButton>
-    </React.Fragment>
-)
+    </div>
+    )
+}
+    

@@ -26,6 +26,7 @@ import BestPlan from './BestPlan';
 import Transactions from './Transactions';
 import Savings from './Savings';
 import RecentPay from './RecentPay';
+import './dashboard.css'
 
 function Copyright(props) {
     return (
@@ -96,7 +97,7 @@ export default function DashboardContent() {
         <ThemeProvider theme={defaultTheme}>
             <Box sx={{ display: 'flex' }}>
                 <CssBaseline />
-                <AppBar position="absolute" open={open} style={{ backgroundColor: 'black' }}>
+                <AppBar position="absolute" open={open} style={{ backgroundColor: 'white' }}>
                     <Toolbar sx={{ pr: '24px', }}>
                         <IconButton
                             edge="start"
@@ -109,10 +110,11 @@ export default function DashboardContent() {
                             }}>
                             <MenuIcon />
                         </IconButton>
-                        <Typography component="h1" variant="h6" align="left" noWrap sx={{ flexGrow: 1, color: 'blue' }}>
+                        <Typography component="h1" variant="h6" align="left" noWrap sx={{ flexGrow: 1, color: 'black' }}>
                             Analytics
                         </Typography>
-                        <Stack direction="row" spacing={2}>
+                        <Stack direction="row" spacing={2} justifyContent="center">
+                            
                             <Button variant="outlined">Full Statistics</Button>
                             <Button variant="outlined">Results Summary</Button>
                         </Stack>
@@ -124,17 +126,19 @@ export default function DashboardContent() {
                     </Toolbar>
                 </AppBar>
                 <Drawer variant="permanent" open={open}>
-                    <FitbitIcon />
-                    <Typography variant="h4" component="div">Veritas</Typography>
+                    
+                    <Typography variant="h4" component="div"> <FitbitIcon sx={{ fontSize: 40 }}  /> Veritas</Typography>
                     <Divider />
                     <List component="nav">
                         {mainListItems}
                         <Divider sx={{ my: 1 }} />
                         {secondListItems}
                         <Divider sx={{ my: 1 }} />
-                        {ThirdListItems}
                     </List>
-                </Drawer>
+                    <div className='down'>
+                    <ThirdListItems/>
+                    </div>
+                    </Drawer>
                 <Box component="main" style={{ border: '2px black' }} sx={{ backgroundColor: (theme) => theme.palette.mode === 'light' ? theme.palette.grey[100] : theme.palette.grey[900], flexGrow: 1, height: '100vh', overflow: 'auto' }}>
                     <Toolbar />
                     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
