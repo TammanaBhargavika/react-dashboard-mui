@@ -11,8 +11,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 
-import List from '@mui/material/List';
-
 // Generate Order Data
 function createData(id, reciever, Type, status, date, amount) {
     return { id, reciever, Type, status, date, amount };
@@ -68,7 +66,7 @@ export default function Transactions() {
                         <TableRow key={row.id}>
                             <TableCell align="left"> 
                             <CheckBoxOutlineBlankIcon fontSize="inherit"/>
-                             <ListItemAvatar><Avatar alt="Remy Sharp" sx={{ width: 20, height: 20 }} />{row.reciever}</ListItemAvatar>
+                            <ListItemAvatar><Avatar alt="Remy Sharp" sx={{ width: 20, height: 20 }} />{row.reciever}</ListItemAvatar>
                             </TableCell>
                             <TableCell>{row.Type}</TableCell>
                             <TableCell>{row.status}</TableCell>
