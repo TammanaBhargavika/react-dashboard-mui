@@ -34,7 +34,7 @@ export default function Login() {
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     // User Login info
-    const database = [{ username: "adminworks@gmail.com", password: "*Tammana3" },];
+    const database = [{ username: "adminworks@gmail.com", password: "@Master123" },];
     const handleSubmit = (event) => {
         //Prevent page reload
         event.preventDefault();
